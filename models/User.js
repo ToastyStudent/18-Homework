@@ -1,4 +1,15 @@
+// Dependencies
 const { Schema, model } = require('mongoose');
+
+// Definition of Collumns for the Category Model, named username, email, thoughts, and friends respectively
+
+// username is a string, cannot be null, is required, and is unique, meaning only one user can have a given username
+
+// email is a string, cannot be null, is required, and is unique, meaning only one user can have a given email
+
+// thoughts is an array of objectIDs objects defined in the Thought model
+
+// friends is an array of objectIDs objects defined in the User model
 
 const userSchema = new Schema(
   {
@@ -12,7 +23,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must match an email address!'],
+      match: [/.+@.+\..+/, 'This must match an email address!'],
     },
     thoughts: [
       {
